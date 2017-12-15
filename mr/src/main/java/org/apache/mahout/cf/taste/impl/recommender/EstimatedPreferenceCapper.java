@@ -35,12 +35,13 @@ public final class EstimatedPreferenceCapper {
   }
 
   public float capEstimate(float estimate) {
-    if (estimate > max) {
-      estimate = max;
+	  float stima = estimate;
+    if (stima > max) {
+      stima = max;
     } else if (estimate < min) {
-      estimate = min;
+      stima = min;
     }
-    return estimate;
+    return stima;
   }
 
 }
