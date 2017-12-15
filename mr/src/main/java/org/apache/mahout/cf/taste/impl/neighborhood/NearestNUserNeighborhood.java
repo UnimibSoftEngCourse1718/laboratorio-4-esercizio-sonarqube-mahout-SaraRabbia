@@ -86,7 +86,7 @@ public final class NearestNUserNeighborhood extends AbstractUserNeighborhood {
     DataModel dataModel = getDataModel();
     UserSimilarity userSimilarityImpl = getUserSimilarity();
     
-    TopItems.Estimator<Long> estimator = new Estimator(userSimilarityImpl, userID, minSimilarity);
+    TopItems.Estimator<Long> estimator = new Estimatore(userSimilarityImpl, userID, minSimilarity);
     
     LongPrimitiveIterator userIDs = SamplingLongPrimitiveIterator.maybeWrapIterator(dataModel.getUserIDs(),
       getSamplingRate());
@@ -99,12 +99,12 @@ public final class NearestNUserNeighborhood extends AbstractUserNeighborhood {
     return "NearestNUserNeighborhood";
   }
   
-  private static final class Estimator implements TopItems.Estimator<Long> {
+  private static final class Estimatore implements TopItems.Estimator<Long> {
     private final UserSimilarity userSimilarityImpl;
     private final long theUserID;
     private final double minSim;
     
-    private Estimator(UserSimilarity userSimilarityImpl, long theUserID, double minSim) {
+    private Estimatore(UserSimilarity userSimilarityImpl, long theUserID, double minSim) {
       this.userSimilarityImpl = userSimilarityImpl;
       this.theUserID = theUserID;
       this.minSim = minSim;

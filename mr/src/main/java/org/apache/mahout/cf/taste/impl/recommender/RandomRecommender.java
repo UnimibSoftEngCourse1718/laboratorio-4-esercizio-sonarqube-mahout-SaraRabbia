@@ -43,24 +43,24 @@ public final class RandomRecommender extends AbstractRecommender {
   
   public RandomRecommender(DataModel dataModel) throws TasteException {
     super(dataModel);
-    float maxPref = Float.NEGATIVE_INFINITY;
-    float minPref = Float.POSITIVE_INFINITY;
+    float maxPrefix = Float.NEGATIVE_INFINITY;
+    float minPrefix = Float.POSITIVE_INFINITY;
     LongPrimitiveIterator userIterator = dataModel.getUserIDs();
     while (userIterator.hasNext()) {
       long userID = userIterator.next();
       PreferenceArray prefs = dataModel.getPreferencesFromUser(userID);
       for (int i = 0; i < prefs.length(); i++) {
         float prefValue = prefs.getValue(i);
-        if (prefValue < minPref) {
-          minPref = prefValue;
+        if (prefValue < minPrefix) {
+          minPrefix = prefValue;
         }
-        if (prefValue > maxPref) {
-          maxPref = prefValue;
+        if (prefValue > maxPrefix) {
+          maxPrefix = prefValue;
         }
       }
     }
-    this.minPref = minPref;
-    this.maxPref = maxPref;
+    this.minPref = minPrefix;
+    this.maxPref = maxPrefix;
   }
 
   @Override

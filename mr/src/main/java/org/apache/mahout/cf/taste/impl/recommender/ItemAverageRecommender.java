@@ -80,7 +80,7 @@ public final class ItemAverageRecommender extends AbstractRecommender {
     PreferenceArray preferencesFromUser = getDataModel().getPreferencesFromUser(userID);
     FastIDSet possibleItemIDs = getAllOtherItems(userID, preferencesFromUser, includeKnownItems);
 
-    TopItems.Estimator<Long> estimator = new Estimator();
+    TopItems.Estimator<Long> estimator = new Estimatore();
 
     List<RecommendedItem> topItems = TopItems.getTopItems(howMany, possibleItemIDs.iterator(), rescorer,
       estimator);
@@ -188,7 +188,7 @@ public final class ItemAverageRecommender extends AbstractRecommender {
     return "ItemAverageRecommender";
   }
   
-  private final class Estimator implements TopItems.Estimator<Long> {
+  private final class Estimatore implements TopItems.Estimator<Long> {
     
     @Override
     public double estimate(Long itemID) {

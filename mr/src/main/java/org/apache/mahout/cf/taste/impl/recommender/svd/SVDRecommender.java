@@ -140,7 +140,7 @@ public final class SVDRecommender extends AbstractRecommender {
     FastIDSet possibleItemIDs = getAllOtherItems(userID, preferencesFromUser, includeKnownItems);
 
     List<RecommendedItem> topItems = TopItems.getTopItems(howMany, possibleItemIDs.iterator(), rescorer,
-        new Estimator(userID));
+        new Estimatore(userID));
     log.debug("Recommendations are: {}", topItems);
 
     return topItems;
@@ -160,11 +160,11 @@ public final class SVDRecommender extends AbstractRecommender {
     return (float) estimate;
   }
 
-  private final class Estimator implements TopItems.Estimator<Long> {
+  private final class Estimatore implements TopItems.Estimator<Long> {
 
     private final long theUserID;
 
-    private Estimator(long theUserID) {
+    private Estimatore(long theUserID) {
       this.theUserID = theUserID;
     }
 

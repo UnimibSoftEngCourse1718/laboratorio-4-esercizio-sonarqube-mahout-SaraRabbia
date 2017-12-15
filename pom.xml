@@ -28,7 +28,11 @@
   <groupId>org.apache.mahout</groupId>
   <artifactId>mahout</artifactId>
 
+<<<<<<< HEAD
   <version>0.13.1-SNAPSHOT</version>
+=======
+  <version>0.12.3</version>
+>>>>>>> refs/heads/feature/sonar
 
   <packaging>pom</packaging>
   <name>Apache Mahout</name>
@@ -102,7 +106,7 @@
     <connection>scm:git:git@github.com:apache/mahout.git</connection>
     <developerConnection>scm:git:https://git-wip-us.apache.org/repos/asf/mahout.git</developerConnection>
     <url>https://git-wip-us.apache.org/repos/asf?p=mahout.git;a=tree;h=refs/heads/${project.scm.tag};hb=${project.scm.tag}</url>
-    <tag>master</tag>
+    <tag>mahout-0.12.3</tag>
   </scm>
   <properties>
     <skipTests>false</skipTests>
@@ -118,11 +122,20 @@
     <mscala.version>3.2.0</mscala.version>
     <hbase.version>1.0.0</hbase.version>
     <lucene.version>5.5.2</lucene.version>
+<<<<<<< HEAD
     <slf4j.version>1.7.22</slf4j.version>
+=======
+    <slf4j.version>1.7.21</slf4j.version>
+>>>>>>> refs/heads/feature/sonar
     <scala.compat.version>2.10</scala.compat.version>
     <scala.version>2.10.4</scala.version>
+<<<<<<< HEAD
     <spark.version>1.6.3</spark.version> <!-- 1.6.3, 2.0.2, 2.1.0 all tested -->
     <flink.version>1.1.4</flink.version>
+=======
+    <spark.version>1.5.2</spark.version>
+    <flink.version>1.1.2</flink.version>
+>>>>>>> refs/heads/feature/sonar
     <h2o.version>0.1.25</h2o.version>
     <jackson.version>2.7.4</jackson.version>
     <hadoop.version>2.4.1</hadoop.version>

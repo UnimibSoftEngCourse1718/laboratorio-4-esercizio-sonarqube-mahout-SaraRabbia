@@ -129,7 +129,7 @@ public class GenericItemBasedRecommender extends AbstractRecommender implements 
 
     FastIDSet possibleItemIDs = getAllOtherItems(userID, preferencesFromUser, includeKnownItems);
 
-    TopItems.Estimator<Long> estimator = new Estimator(userID, preferencesFromUser);
+    TopItems.Estimator<Long> estimator = new Estimatore(userID, preferencesFromUser);
 
     List<RecommendedItem> topItems = TopItems.getTopItems(howMany, possibleItemIDs.iterator(), rescorer,
       estimator);
@@ -300,12 +300,12 @@ public class GenericItemBasedRecommender extends AbstractRecommender implements 
     }
   }
   
-  private final class Estimator implements TopItems.Estimator<Long> {
+  private final class Estimatore implements TopItems.Estimator<Long> {
     
     private final long userID;
     private final PreferenceArray preferencesFromUser;
     
-    private Estimator(long userID, PreferenceArray preferencesFromUser) {
+    private Estimatore(long userID, PreferenceArray preferencesFromUser) {
       this.userID = userID;
       this.preferencesFromUser = preferencesFromUser;
     }

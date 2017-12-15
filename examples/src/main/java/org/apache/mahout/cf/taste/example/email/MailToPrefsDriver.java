@@ -184,7 +184,7 @@ public final class MailToPrefsDriver extends AbstractJob {
       for (Path fromChunk : fromChunks) {
         for (Path idChunk : msgIdChunks) {
           Path out = new Path(vecPath, "tmp-" + i + '-' + j);
-          DistributedCache.setCacheFiles(new URI[]{fromChunk.toUri(), idChunk.toUri()}, conf);
+//          DistributedCache.setCacheFiles(new URI[]{fromChunk.toUri(), idChunk.toUri()}, conf);
           Job createRecMatrix = prepareJob(input, out, SequenceFileInputFormat.class,
                   MailToRecMapper.class, Text.class, LongWritable.class, MailToRecReducer.class, Text.class,
                   NullWritable.class, TextOutputFormat.class);
