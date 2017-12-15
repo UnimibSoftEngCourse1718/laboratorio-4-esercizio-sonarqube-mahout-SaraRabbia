@@ -86,7 +86,7 @@ public final class NearestNUserNeighborhood extends AbstractUserNeighborhood {
     DataModel dataModel = getDataModel();
     UserSimilarity userSimilarityImpl = getUserSimilarity();
     
-    TopItems.Estimator<Long> estimator = new Estimator(userSimilarityImpl, userID, minSimilarity);
+    TopItems.Estimator<Long> estimator = new Estimatore(userSimilarityImpl, userID, minSimilarity);
     
     LongPrimitiveIterator userIDs = SamplingLongPrimitiveIterator.maybeWrapIterator(dataModel.getUserIDs(),
       getSamplingRate());
